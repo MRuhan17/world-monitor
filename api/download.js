@@ -1,8 +1,8 @@
 // Non-sebuf: returns XML/HTML, stays as standalone Vercel function
 export const config = { runtime: 'edge' };
 
-const RELEASES_URL = 'https://api.github.com/repos/koala73/worldmonitor/releases/latest';
-const RELEASES_PAGE = 'https://github.com/koala73/worldmonitor/releases/latest';
+const RELEASES_URL = 'https://api.github.com/repos/MRuhan17/worldmonitor/releases/latest';
+const RELEASES_PAGE = 'https://github.com/MRuhan17/worldmonitor/releases/latest';
 
 const PLATFORM_PATTERNS = {
   'windows-exe': (name) => name.endsWith('_x64-setup.exe'),
@@ -75,3 +75,4 @@ export default async function handler(req) {
     return Response.redirect(RELEASES_PAGE, 302);
   }
 }
+

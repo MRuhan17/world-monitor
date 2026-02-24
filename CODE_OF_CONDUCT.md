@@ -46,7 +46,7 @@ spaces.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the project maintainer at **[GitHub Issues](https://github.com/koala73/worldmonitor/issues)** or by contacting the
+reported to the project maintainer at **[GitHub Issues](https://github.com/MRuhan17/world-monitor/issues)** or by contacting the
 repository owner directly through GitHub.
 
 All complaints will be reviewed and investigated promptly and fairly. The project
@@ -117,3 +117,4 @@ For answers to common questions about this code of conduct, see the FAQ at
 [Mozilla CoC]: https://github.com/mozilla/diversity
 [FAQ]: https://www.contributor-covenant.org/faq
 [translations]: https://www.contributor-covenant.org/translations
+

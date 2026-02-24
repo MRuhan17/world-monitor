@@ -16,10 +16,10 @@ Thank you for helping spread the word about World Monitor! This guide provides t
 
 | Link | Description |
 |------|-------------|
-| [worldmonitor.app](https://worldmonitor.app) | Main dashboard — geopolitics, military, conflicts |
-| [tech.worldmonitor.app](https://tech.worldmonitor.app) | Tech variant — startups, AI/ML, cybersecurity |
-| [finance.worldmonitor.app](https://finance.worldmonitor.app) | Finance variant — markets, exchanges, central banks |
-| [GitHub](https://github.com/koala73/worldmonitor) | Source code (AGPL-3.0) |
+| [world-monitor.app](https://world-monitor.app) | Main dashboard — geopolitics, military, conflicts |
+| [tech.world-monitor.app](https://tech.world-monitor.app) | Tech variant — startups, AI/ML, cybersecurity |
+| [finance.world-monitor.app](https://finance.world-monitor.app) | Finance variant — markets, exchanges, central banks |
+| [GitHub](https://github.com/MRuhan17/world-monitor) | Source code (AGPL-3.0) |
 
 ---
 
@@ -182,3 +182,4 @@ Run AI summarization entirely on your own hardware — no API keys, no cloud, no
 We genuinely appreciate community members helping grow World Monitor's reach. Feel free to interpret these guidelines creatively — there's no strict template. The most compelling content comes from showing what YOU find most interesting or useful about the tool.
 
 If you have questions or want specific screenshots/assets, open a Discussion on the GitHub repo or reach out directly.
+
