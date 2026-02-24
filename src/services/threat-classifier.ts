@@ -294,9 +294,9 @@ import {
   IntelligenceServiceClient,
   ApiError,
   type ClassifyEventResponse,
-} from '@/generated/client/worldmonitor/intelligence/v1/service_client';
+} from '@/generated/client/world-monitor/intelligence/v1/service_client';
 
-const classifyClient = new IntelligenceServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const classifyClient = new IntelligenceServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 const VALID_LEVELS: Record<string, ThreatLevel> = {
   critical: 'critical', high: 'high', medium: 'medium', low: 'low', info: 'info',

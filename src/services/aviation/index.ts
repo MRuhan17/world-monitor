@@ -1,7 +1,7 @@
 import {
   AviationServiceClient,
   type AirportDelayAlert as ProtoAlert,
-} from '@/generated/client/worldmonitor/aviation/v1/service_client';
+} from '@/generated/client/world-monitor/aviation/v1/service_client';
 import { createCircuitBreaker } from '@/utils';
 
 // --- Consumer-friendly types (matching legacy shape exactly) ---
@@ -89,7 +89,7 @@ function toDisplayAlert(proto: ProtoAlert): AirportDelayAlert {
 
 // --- Client + circuit breaker ---
 
-const client = new AviationServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new AviationServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const breaker = createCircuitBreaker<AirportDelayAlert[]>({ name: 'FAA Flight Delays' });
 
 // --- Main fetch (public API) ---

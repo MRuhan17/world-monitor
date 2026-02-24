@@ -12,7 +12,7 @@ import { isFeatureAvailable } from './runtime-config';
 import {
   MilitaryServiceClient,
   type AircraftDetails,
-} from '@/generated/client/worldmonitor/military/v1/service_client';
+} from '@/generated/client/world-monitor/military/v1/service_client';
 
 export interface WingbitsAircraftDetails {
   icao24: string;
@@ -48,7 +48,7 @@ export interface EnrichedAircraftInfo {
 
 // ---- Sebuf client ----
 
-const client = new MilitaryServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new MilitaryServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 // Client-side cache for aircraft details
 const localCache = new Map<string, { data: WingbitsAircraftDetails; timestamp: number }>();

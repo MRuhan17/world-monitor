@@ -908,7 +908,7 @@ export class App {
     const shareUrl = this.getShareUrl();
     if (shareUrl) history.replaceState(null, '', shareUrl);
 
-    const marketClient = new MarketServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+    const marketClient = new MarketServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
     const stockPromise = marketClient.getCountryStockIndex({ countryCode: code })
       .then((resp) => ({
         available: resp.available,
@@ -990,7 +990,7 @@ export class App {
 
       let briefText = '';
       try {
-        const intelClient = new IntelligenceServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+        const intelClient = new IntelligenceServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
         const resp = await intelClient.getCountryIntelBrief({ countryCode: code });
         briefText = resp.brief;
       } catch { /* server unreachable */ }
@@ -3779,7 +3779,7 @@ export class App {
     }
 
     try {
-      const client = new ResearchServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+      const client = new ResearchServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
       const data = await client.listTechEvents({
         type: 'conference',
         mappable: true,

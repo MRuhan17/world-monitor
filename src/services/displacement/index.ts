@@ -3,7 +3,7 @@ import {
   type GetDisplacementSummaryResponse as ProtoResponse,
   type CountryDisplacement as ProtoCountry,
   type DisplacementFlow as ProtoFlow,
-} from '@/generated/client/worldmonitor/displacement/v1/service_client';
+} from '@/generated/client/world-monitor/displacement/v1/service_client';
 import { createCircuitBreaker, getCSSColor } from '@/utils';
 
 // ─── Consumer-friendly types (matching legacy shape exactly) ───
@@ -106,7 +106,7 @@ function toDisplayFlow(proto: ProtoFlow): DisplacementFlow {
 
 // ─── Client + circuit breaker ───
 
-const client = new DisplacementServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new DisplacementServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 const emptyResult: UnhcrSummary = {
   year: new Date().getFullYear(),

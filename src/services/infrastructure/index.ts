@@ -12,14 +12,14 @@ import {
   type ListServiceStatusesResponse,
   type InternetOutage as ProtoOutage,
   type ServiceStatus as ProtoServiceStatus,
-} from '@/generated/client/worldmonitor/infrastructure/v1/service_client';
+} from '@/generated/client/world-monitor/infrastructure/v1/service_client';
 import type { InternetOutage } from '@/types';
 import { createCircuitBreaker } from '@/utils';
 import { isFeatureAvailable } from '../runtime-config';
 
 // ---- Client + Circuit Breakers ----
 
-const client = new InfrastructureServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new InfrastructureServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const outageBreaker = createCircuitBreaker<ListInternetOutagesResponse>({ name: 'Internet Outages' });
 const statusBreaker = createCircuitBreaker<ListServiceStatusesResponse>({ name: 'Service Statuses' });
 

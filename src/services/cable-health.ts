@@ -2,11 +2,11 @@ import {
   InfrastructureServiceClient,
   type GetCableHealthResponse,
   type CableHealthRecord as ProtoCableHealthRecord,
-} from '@/generated/client/worldmonitor/infrastructure/v1/service_client';
+} from '@/generated/client/world-monitor/infrastructure/v1/service_client';
 import type { CableHealthRecord, CableHealthResponse, CableHealthStatus } from '@/types';
 import { createCircuitBreaker } from '@/utils';
 
-const client = new InfrastructureServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new InfrastructureServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const breaker = createCircuitBreaker<GetCableHealthResponse>({ name: 'Cable Health' });
 const emptyFallback: GetCableHealthResponse = { generatedAt: 0, cables: {} };
 

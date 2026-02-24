@@ -2,13 +2,13 @@ import {
   UnrestServiceClient,
   type UnrestEvent,
   type ListUnrestEventsResponse,
-} from '@/generated/client/worldmonitor/unrest/v1/service_client';
+} from '@/generated/client/world-monitor/unrest/v1/service_client';
 import type { SocialUnrestEvent, ProtestSeverity, ProtestEventType, ProtestSource } from '@/types';
 import { createCircuitBreaker } from '@/utils';
 
 // ---- Client + Circuit Breaker ----
 
-const client = new UnrestServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new UnrestServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const unrestBreaker = createCircuitBreaker<ListUnrestEventsResponse>({
   name: 'Unrest Events',
 });

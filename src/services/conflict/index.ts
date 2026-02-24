@@ -6,13 +6,13 @@ import {
   type ListAcledEventsResponse,
   type ListUcdpEventsResponse,
   type GetHumanitarianSummaryResponse,
-} from '@/generated/client/worldmonitor/conflict/v1/service_client';
+} from '@/generated/client/world-monitor/conflict/v1/service_client';
 import type { UcdpGeoEvent, UcdpEventType } from '@/types';
 import { createCircuitBreaker } from '@/utils';
 
 // ---- Client + Circuit Breakers (3 separate breakers for 3 RPCs) ----
 
-const client = new ConflictServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new ConflictServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const acledBreaker = createCircuitBreaker<ListAcledEventsResponse>({ name: 'ACLED Conflicts' });
 const ucdpBreaker = createCircuitBreaker<ListUcdpEventsResponse>({ name: 'UCDP Events' });
 const hapiBreaker = createCircuitBreaker<GetHumanitarianSummaryResponse>({ name: 'HDX HAPI' });

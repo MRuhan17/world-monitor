@@ -2,7 +2,7 @@ import {
   CyberServiceClient,
   type CyberThreat as ProtoCyberThreat,
   type ListCyberThreatsResponse,
-} from '@/generated/client/worldmonitor/cyber/v1/service_client';
+} from '@/generated/client/world-monitor/cyber/v1/service_client';
 import type {
   CyberThreat,
   CyberThreatType,
@@ -14,7 +14,7 @@ import { createCircuitBreaker } from '@/utils';
 
 // ---- Client + Circuit Breaker ----
 
-const client = new CyberServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new CyberServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const breaker = createCircuitBreaker<ListCyberThreatsResponse>({ name: 'Cyber Threats' });
 
 const emptyFallback: ListCyberThreatsResponse = { threats: [], pagination: undefined };

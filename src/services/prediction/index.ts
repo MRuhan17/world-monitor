@@ -1,4 +1,4 @@
-import { PredictionServiceClient } from '@/generated/client/worldmonitor/prediction/v1/service_client';
+import { PredictionServiceClient } from '@/generated/client/world-monitor/prediction/v1/service_client';
 import { createCircuitBreaker } from '@/utils';
 import { SITE_VARIANT } from '@/config';
 import { isDesktopRuntime } from '@/services/runtime';
@@ -46,7 +46,7 @@ const RAILWAY_POLY_URL = wsRelayUrl
 const breaker = createCircuitBreaker<PredictionMarket[]>({ name: 'Polymarket' });
 
 // Sebuf client for strategy 4
-const client = new PredictionServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new PredictionServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 // Track whether direct browser->Polymarket fetch works
 // Cloudflare blocks server-side TLS but browsers pass JA3 fingerprint checks

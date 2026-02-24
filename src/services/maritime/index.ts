@@ -3,7 +3,7 @@ import {
   type AisDensityZone as ProtoDensityZone,
   type AisDisruption as ProtoDisruption,
   type GetVesselSnapshotResponse,
-} from '@/generated/client/worldmonitor/maritime/v1/service_client';
+} from '@/generated/client/world-monitor/maritime/v1/service_client';
 import { createCircuitBreaker } from '@/utils';
 import type { AisDisruptionEvent, AisDensityZone, AisDisruptionType } from '@/types';
 import { dataFreshness } from '../data-freshness';
@@ -11,7 +11,7 @@ import { isFeatureAvailable } from '../runtime-config';
 
 // ---- Proto fallback (desktop safety when relay URL is unavailable) ----
 
-const client = new MaritimeServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new MaritimeServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const snapshotBreaker = createCircuitBreaker<GetVesselSnapshotResponse>({ name: 'Maritime Snapshot' });
 const emptySnapshotFallback: GetVesselSnapshotResponse = { snapshot: undefined };
 

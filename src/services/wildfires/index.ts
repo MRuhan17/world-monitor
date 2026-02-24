@@ -3,7 +3,7 @@ import {
   type FireDetection,
   type FireConfidence,
   type ListFireDetectionsResponse,
-} from '@/generated/client/worldmonitor/wildfire/v1/service_client';
+} from '@/generated/client/world-monitor/wildfire/v1/service_client';
 import { createCircuitBreaker } from '@/utils';
 
 export type { FireDetection };
@@ -38,7 +38,7 @@ export interface MapFire {
 
 // -- Client --
 
-const client = new WildfireServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new WildfireServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const breaker = createCircuitBreaker<ListFireDetectionsResponse>({ name: 'Wildfires' });
 
 const emptyFallback: ListFireDetectionsResponse = { fireDetections: [] };

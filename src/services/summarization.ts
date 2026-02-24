@@ -12,7 +12,7 @@ import { SITE_VARIANT } from '@/config';
 import { BETA_MODE } from '@/config/beta';
 import { isFeatureAvailable, type RuntimeFeatureId } from './runtime-config';
 import { trackLLMUsage, trackLLMFailure } from './analytics';
-import { NewsServiceClient, type SummarizeArticleResponse } from '@/generated/client/worldmonitor/news/v1/service_client';
+import { NewsServiceClient, type SummarizeArticleResponse } from '@/generated/client/world-monitor/news/v1/service_client';
 import { createCircuitBreaker } from '@/utils';
 
 export type SummarizationProvider = 'ollama' | 'groq' | 'openrouter' | 'browser' | 'cache';
@@ -33,7 +33,7 @@ export interface SummarizeOptions {
 
 // ── Sebuf client (replaces direct fetch to /api/{provider}-summarize) ──
 
-const newsClient = new NewsServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const newsClient = new NewsServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const summaryBreaker = createCircuitBreaker<SummarizeArticleResponse>({ name: 'News Summarization' });
 
 const emptySummaryFallback: SummarizeArticleResponse = { summary: '', provider: '', model: '', cached: false, skipped: false, fallback: true, tokens: 0, reason: '', error: '', errorType: '' };

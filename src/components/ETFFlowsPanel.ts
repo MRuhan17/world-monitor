@@ -1,8 +1,8 @@
 import { Panel } from './Panel';
 import { t } from '@/services/i18n';
 import { escapeHtml } from '@/utils/sanitize';
-import { MarketServiceClient } from '@/generated/client/worldmonitor/market/v1/service_client';
-import type { ListEtfFlowsResponse } from '@/generated/client/worldmonitor/market/v1/service_client';
+import { MarketServiceClient } from '@/generated/client/world-monitor/market/v1/service_client';
+import type { ListEtfFlowsResponse } from '@/generated/client/world-monitor/market/v1/service_client';
 
 type ETFFlowsResult = ListEtfFlowsResponse;
 
@@ -49,7 +49,7 @@ export class ETFFlowsPanel extends Panel {
   private async fetchData(): Promise<void> {
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        const client = new MarketServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+        const client = new MarketServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
         this.data = await client.listEtfFlows({});
         this.error = null;
 

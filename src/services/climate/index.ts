@@ -4,7 +4,7 @@ import {
   type AnomalySeverity as ProtoAnomalySeverity,
   type AnomalyType as ProtoAnomalyType,
   type ListClimateAnomaliesResponse,
-} from '@/generated/client/worldmonitor/climate/v1/service_client';
+} from '@/generated/client/world-monitor/climate/v1/service_client';
 import { createCircuitBreaker } from '@/utils';
 
 // Re-export consumer-friendly type matching legacy shape exactly.
@@ -27,7 +27,7 @@ export interface ClimateFetchResult {
   anomalies: ClimateAnomaly[];
 }
 
-const client = new ClimateServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new ClimateServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const breaker = createCircuitBreaker<ListClimateAnomaliesResponse>({ name: 'Climate Anomalies' });
 
 const emptyClimateFallback: ListClimateAnomaliesResponse = { anomalies: [] };

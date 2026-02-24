@@ -4,7 +4,7 @@ import {
   IntelligenceServiceClient,
   type GdeltArticle as ProtoGdeltArticle,
   type SearchGdeltDocumentsResponse,
-} from '@/generated/client/worldmonitor/intelligence/v1/service_client';
+} from '@/generated/client/world-monitor/intelligence/v1/service_client';
 import { createCircuitBreaker } from '@/utils';
 
 export interface GdeltArticle {
@@ -86,7 +86,7 @@ export function getIntelTopics(): IntelTopic[] {
 
 // ---- Sebuf client ----
 
-const client = new IntelligenceServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new IntelligenceServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const gdeltBreaker = createCircuitBreaker<SearchGdeltDocumentsResponse>({ name: 'GDELT Intelligence' });
 
 const emptyGdeltFallback: SearchGdeltDocumentsResponse = { articles: [], query: '', error: '' };

@@ -1,8 +1,8 @@
 import { Panel } from './Panel';
 import { escapeHtml } from '@/utils/sanitize';
 import { t } from '@/services/i18n';
-import { EconomicServiceClient } from '@/generated/client/worldmonitor/economic/v1/service_client';
-import type { GetMacroSignalsResponse } from '@/generated/client/worldmonitor/economic/v1/service_client';
+import { EconomicServiceClient } from '@/generated/client/world-monitor/economic/v1/service_client';
+import type { GetMacroSignalsResponse } from '@/generated/client/world-monitor/economic/v1/service_client';
 
 interface MacroSignalData {
   timestamp: string;
@@ -22,7 +22,7 @@ interface MacroSignalData {
   unavailable?: boolean;
 }
 
-const economicClient = new EconomicServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const economicClient = new EconomicServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 /** Map proto response (optional fields = undefined) to MacroSignalData (null for absent values). */
 function mapProtoToData(r: GetMacroSignalsResponse): MacroSignalData {

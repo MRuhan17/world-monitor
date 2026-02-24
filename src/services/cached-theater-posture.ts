@@ -10,11 +10,11 @@ import {
   MilitaryServiceClient,
   type GetTheaterPostureResponse,
   type TheaterPosture,
-} from '@/generated/client/worldmonitor/military/v1/service_client';
+} from '@/generated/client/world-monitor/military/v1/service_client';
 
 // ---- Sebuf client ----
 
-const client = new MilitaryServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new MilitaryServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 // ---- Legacy interface (preserved for consumer compatibility) ----
 

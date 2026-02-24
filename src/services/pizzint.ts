@@ -7,11 +7,11 @@ import {
   type PizzintStatus as ProtoPizzintStatus,
   type PizzintLocation as ProtoLocation,
   type GdeltTensionPair as ProtoTensionPair,
-} from '@/generated/client/worldmonitor/intelligence/v1/service_client';
+} from '@/generated/client/world-monitor/intelligence/v1/service_client';
 
 // ---- Sebuf client ----
 
-const client = new IntelligenceServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new IntelligenceServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 // ---- Circuit breakers ----
 

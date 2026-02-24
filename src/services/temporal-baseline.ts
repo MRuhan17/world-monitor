@@ -2,7 +2,7 @@
 // Detects when current activity levels deviate from historical baselines
 // Backed by InfrastructureService RPCs (GetTemporalBaseline, RecordBaselineSnapshot)
 
-import { InfrastructureServiceClient } from '@/generated/client/worldmonitor/infrastructure/v1/service_client';
+import { InfrastructureServiceClient } from '@/generated/client/world-monitor/infrastructure/v1/service_client';
 
 export type TemporalEventType =
   | 'military_flights'
@@ -22,7 +22,7 @@ export interface TemporalAnomaly {
   severity: 'medium' | 'high' | 'critical';
 }
 
-const client = new InfrastructureServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new InfrastructureServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 const TYPE_LABELS: Record<TemporalEventType, string> = {
   military_flights: 'Military flights',

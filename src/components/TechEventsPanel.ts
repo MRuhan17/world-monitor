@@ -2,12 +2,12 @@ import { Panel } from './Panel';
 import { t } from '@/services/i18n';
 import { sanitizeUrl } from '@/utils/sanitize';
 import { h, replaceChildren } from '@/utils/dom-utils';
-import { ResearchServiceClient } from '@/generated/client/worldmonitor/research/v1/service_client';
-import type { TechEvent } from '@/generated/client/worldmonitor/research/v1/service_client';
+import { ResearchServiceClient } from '@/generated/client/world-monitor/research/v1/service_client';
+import type { TechEvent } from '@/generated/client/world-monitor/research/v1/service_client';
 
 type ViewMode = 'upcoming' | 'conferences' | 'earnings' | 'all';
 
-const researchClient = new ResearchServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const researchClient = new ResearchServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 export class TechEventsPanel extends Panel {
   private viewMode: ViewMode = 'upcoming';

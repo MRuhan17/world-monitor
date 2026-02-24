@@ -12,11 +12,11 @@ import {
   type GetRiskScoresResponse,
   type CiiScore,
   type StrategicRisk,
-} from '@/generated/client/worldmonitor/intelligence/v1/service_client';
+} from '@/generated/client/world-monitor/intelligence/v1/service_client';
 
 // ---- Sebuf client ----
 
-const client = new IntelligenceServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new IntelligenceServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 // ---- Legacy types (preserved for consumer compatibility) ----
 

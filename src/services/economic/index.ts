@@ -14,7 +14,7 @@ import {
   type WorldBankCountryData as ProtoWorldBankCountryData,
   type GetEnergyPricesResponse,
   type EnergyPrice as ProtoEnergyPrice,
-} from '@/generated/client/worldmonitor/economic/v1/service_client';
+} from '@/generated/client/world-monitor/economic/v1/service_client';
 import { createCircuitBreaker } from '@/utils';
 import { getCSSColor } from '@/utils';
 import { isFeatureAvailable } from '../runtime-config';
@@ -22,7 +22,7 @@ import { dataFreshness } from '../data-freshness';
 
 // ---- Client + Circuit Breakers ----
 
-const client = new EconomicServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new EconomicServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 const fredBreaker = createCircuitBreaker<GetFredSeriesResponse>({ name: 'FRED Economic' });
 const wbBreaker = createCircuitBreaker<ListWorldBankIndicatorsResponse>({ name: 'World Bank' });
 const eiaBreaker = createCircuitBreaker<GetEnergyPricesResponse>({ name: 'EIA Energy' });

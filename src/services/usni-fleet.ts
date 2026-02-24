@@ -4,9 +4,9 @@ import { getUSNIRegionApproxCoords, getUSNIRegionCoords } from '@/config/militar
 import {
   MilitaryServiceClient,
   type GetUSNIFleetReportResponse,
-} from '@/generated/client/worldmonitor/military/v1/service_client';
+} from '@/generated/client/world-monitor/military/v1/service_client';
 
-const client = new MilitaryServiceClient('', { fetch: (...args) => globalThis.fetch(...args) });
+const client = new MilitaryServiceClient('', { fetch: globalThis.fetch.bind(globalThis) });
 
 const breaker = createCircuitBreaker<USNIFleetReport | null>({
   name: 'USNI Fleet Tracker',
