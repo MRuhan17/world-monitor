@@ -2,12 +2,6 @@
 
 **Real-time global intelligence dashboard** — AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface.
 
-[![GitHub stars](https://img.shields.io/github/stars/MRuhan17/world-monitor?style=social)](https://github.com/MRuhan17/world-monitor/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/MRuhan17/world-monitor?style=social)](https://github.com/MRuhan17/world-monitor/network/members)
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Last commit](https://img.shields.io/github/last-commit/MRuhan17/world-monitor)](https://github.com/MRuhan17/world-monitor/commits/main)
-[![Latest release](https://img.shields.io/github/v/release/MRuhan17/world-monitor?style=flat)](https://github.com/MRuhan17/world-monitor/releases/latest)
 
 <p align="center">
   <a href="https://world-monitor.app"><img src="https://img.shields.io/badge/Web_App-world-monitor.app-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Web App"></a>&nbsp;
