@@ -9,7 +9,7 @@ import { t } from '@/services/i18n';
 import { escapeHtml } from '@/utils/sanitize';
 import { isDesktopRuntime } from '@/services/runtime';
 
-const INTEL_FINDINGS_KEY = 'worldmonitor-intel-findings';
+const INTEL_FINDINGS_KEY = 'world-monitor-intel-findings';
 
 function getLocalizedPanelName(panelKey: string, fallback: string): string {
   if (panelKey === 'runtime-config') {
@@ -114,3 +114,4 @@ export function initSettingsWindow(): void {
 
   render();
 }
+

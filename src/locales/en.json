@@ -313,7 +313,7 @@
       "noTraffic": "No traffic recorded yet.",
       "sidecarUnreachable": "Sidecar not reachable.",
       "logCleared": "Log cleared.",
-      "worldMonitor": {
+      "world-monitor": {
         "tabLabel": "World Monitor",
         "heroTitle": "One key. Everything included.",
         "heroDescription": "A single World Monitor license replaces every API key and LLM provider you'd otherwise configure yourself. AI summaries, real-time intelligence, market data, conflict tracking, fire detection, satellite imagery — all powered, all managed, zero setup.",
@@ -1880,3 +1880,4 @@
     "refresh": "Refresh"
   }
 }
+

@@ -52,7 +52,7 @@ const SECRET_ANALYTICS_NAMES: Record<RuntimeSecretKey, string> = {
   UC_DP_KEY: 'uc_dp',
   OLLAMA_API_URL: 'ollama_url',
   OLLAMA_MODEL: 'ollama_model',
-  WORLDMONITOR_API_KEY: 'worldmonitor',
+  world-monitor_API_KEY: 'world-monitor',
 };
 
 // ── Typed event schemas (allowlisted properties per event) ──
@@ -380,3 +380,4 @@ export function trackWebcamRegionFiltered(region: string): void {
 export function trackDeeplinkOpened(type: string, target: string): void {
   trackEvent('wm_deeplink_opened', { deeplink_type: type, target });
 }
+

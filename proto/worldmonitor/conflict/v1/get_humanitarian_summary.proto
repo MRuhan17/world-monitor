@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package worldmonitor.conflict.v1;
+package world-monitor.conflict.v1;
 
 import "buf/validate/validate.proto";
-import "worldmonitor/conflict/v1/humanitarian_summary.proto";
+import "world-monitor/conflict/v1/humanitarian_summary.proto";
 
 // GetHumanitarianSummaryRequest specifies which country to retrieve the humanitarian summary for.
 message GetHumanitarianSummaryRequest {
@@ -20,3 +20,4 @@ message GetHumanitarianSummaryResponse {
   // The humanitarian summary for the country.
   HumanitarianCountrySummary summary = 1;
 }
+

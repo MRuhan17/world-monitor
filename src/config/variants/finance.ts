@@ -1,4 +1,4 @@
-// Finance/Trading variant - finance.worldmonitor.app
+// Finance/Trading variant - finance.world-monitor.app
 import type { PanelConfig, MapLayers } from '@/types';
 import type { VariantConfig } from './base';
 
@@ -259,3 +259,4 @@ export const VARIANT_CONFIG: VariantConfig = {
   mapLayers: DEFAULT_MAP_LAYERS,
   mobileMapLayers: MOBILE_DEFAULT_MAP_LAYERS,
 };
+

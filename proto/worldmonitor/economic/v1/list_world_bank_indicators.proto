@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package worldmonitor.economic.v1;
+package world-monitor.economic.v1;
 
 import "buf/validate/validate.proto";
-import "worldmonitor/core/v1/pagination.proto";
-import "worldmonitor/economic/v1/economic_data.proto";
+import "world-monitor/core/v1/pagination.proto";
+import "world-monitor/economic/v1/economic_data.proto";
 
 // ListWorldBankIndicatorsRequest specifies filters for retrieving World Bank data.
 message ListWorldBankIndicatorsRequest {
@@ -18,7 +18,7 @@ message ListWorldBankIndicatorsRequest {
   // Optional year filter. Defaults to latest available.
   int32 year = 3;
   // Pagination parameters.
-  worldmonitor.core.v1.PaginationRequest pagination = 4;
+  world-monitor.core.v1.PaginationRequest pagination = 4;
 }
 
 // ListWorldBankIndicatorsResponse contains World Bank indicator data.
@@ -26,5 +26,6 @@ message ListWorldBankIndicatorsResponse {
   // Country-level indicator data.
   repeated WorldBankCountryData data = 1;
   // Pagination metadata.
-  worldmonitor.core.v1.PaginationResponse pagination = 2;
+  world-monitor.core.v1.PaginationResponse pagination = 2;
 }
+

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.core.v1;
+package world-monitor.core.v1;
 
 import "buf/validate/validate.proto";
 
@@ -22,3 +22,4 @@ message PaginationResponse {
   // Total count of items matching the query, if known. Zero if the total is unknown.
   int32 total_count = 2;
 }
+

@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package worldmonitor.displacement.v1;
+package world-monitor.displacement.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/geo.proto";
+import "world-monitor/core/v1/geo.proto";
 
 // DisplacementSummary represents a global overview of displacement data from UNHCR.
 message DisplacementSummary {
@@ -58,7 +58,7 @@ message CountryDisplacement {
   // Total persons hosted by this country.
   int64 host_total = 10 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
   // Representative location for mapping.
-  worldmonitor.core.v1.GeoCoordinates location = 11;
+  world-monitor.core.v1.GeoCoordinates location = 11;
 }
 
 // DisplacementFlow represents a refugee movement corridor between two countries.
@@ -80,7 +80,8 @@ message DisplacementFlow {
   // Number of refugees in this flow.
   int64 refugees = 5 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
   // Origin country representative location.
-  worldmonitor.core.v1.GeoCoordinates origin_location = 6;
+  world-monitor.core.v1.GeoCoordinates origin_location = 6;
   // Asylum country representative location.
-  worldmonitor.core.v1.GeoCoordinates asylum_location = 7;
+  world-monitor.core.v1.GeoCoordinates asylum_location = 7;
 }
+

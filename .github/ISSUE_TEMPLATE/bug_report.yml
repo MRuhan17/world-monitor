@@ -13,9 +13,9 @@ body:
       label: Variant
       description: Which variant are you using?
       options:
-        - worldmonitor.app (Full / Geopolitical)
-        - tech.worldmonitor.app (Tech / Startup)
-        - finance.worldmonitor.app (Finance)
+        - world-monitor.app (Full / Geopolitical)
+        - tech.world-monitor.app (Tech / Startup)
+        - finance.world-monitor.app (Finance)
         - Desktop app (Windows)
         - Desktop app (macOS)
         - Desktop app (Linux)
@@ -86,3 +86,4 @@ body:
       label: Browser & OS
       description: e.g. Chrome 120 on Windows 11, Safari 17 on macOS Sonoma
       placeholder: Chrome 120 on Windows 11
+

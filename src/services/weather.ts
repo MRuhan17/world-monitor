@@ -40,7 +40,7 @@ const breaker = createCircuitBreaker<WeatherAlert[]>({ name: 'NWS Weather' });
 export async function fetchWeatherAlerts(): Promise<WeatherAlert[]> {
   return breaker.execute(async () => {
     const response = await fetch(NWS_API, {
-      headers: { 'User-Agent': 'WorldMonitor/1.0' }
+      headers: { 'User-Agent': 'world-monitor/1.0' }
     });
 
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -110,3 +110,4 @@ export function getSeverityColor(severity: WeatherAlert['severity']): string {
     default: return getCSSColor('--text-dim');
   }
 }
+

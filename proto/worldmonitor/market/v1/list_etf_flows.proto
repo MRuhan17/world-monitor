@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.market.v1;
+package world-monitor.market.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
@@ -58,3 +58,4 @@ message ListEtfFlowsResponse {
   // Individual ETF flow data, sorted by volume descending.
   repeated EtfFlow etfs = 3;
 }
+

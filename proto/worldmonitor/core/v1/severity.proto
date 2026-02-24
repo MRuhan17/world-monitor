@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.core.v1;
+package world-monitor.core.v1;
 
 // SeverityLevel represents a three-tier severity classification used across domains.
 // Maps to existing TS unions: 'low' | 'medium' | 'high'.
@@ -42,3 +42,4 @@ enum TrendDirection {
   // Falling — the metric is decreasing.
   TREND_DIRECTION_FALLING = 3;
 }
+

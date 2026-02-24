@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package worldmonitor.prediction.v1;
+package world-monitor.prediction.v1;
 
-import "worldmonitor/core/v1/pagination.proto";
-import "worldmonitor/prediction/v1/prediction_market.proto";
+import "world-monitor/core/v1/pagination.proto";
+import "world-monitor/prediction/v1/prediction_market.proto";
 
 // ListPredictionMarketsRequest specifies filters for retrieving prediction markets.
 message ListPredictionMarketsRequest {
   // Pagination parameters.
-  worldmonitor.core.v1.PaginationRequest pagination = 1;
+  world-monitor.core.v1.PaginationRequest pagination = 1;
   // Optional category filter (e.g., "Politics").
   string category = 2;
   // Optional search query for market titles.
@@ -20,5 +20,6 @@ message ListPredictionMarketsResponse {
   // The list of prediction markets.
   repeated PredictionMarket markets = 1;
   // Pagination metadata.
-  worldmonitor.core.v1.PaginationResponse pagination = 2;
+  world-monitor.core.v1.PaginationResponse pagination = 2;
 }
+

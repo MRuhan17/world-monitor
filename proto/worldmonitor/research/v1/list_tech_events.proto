@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.research.v1;
+package world-monitor.research.v1;
 
 import "buf/validate/validate.proto";
 
@@ -74,3 +74,4 @@ message ListTechEventsResponse {
   // Error message if success is false.
   string error = 7;
 }
+

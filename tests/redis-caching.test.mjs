@@ -155,8 +155,8 @@ describe('redis caching behavior', { concurrency: 1 }, () => {
 
 describe('military flights bbox behavior', { concurrency: 1 }, () => {
   async function importListMilitaryFlights() {
-    return importPatchedTsModule('server/worldmonitor/military/v1/list-military-flights.ts', {
-      './_shared': resolve(root, 'server/worldmonitor/military/v1/_shared.ts'),
+    return importPatchedTsModule('server/world-monitor/military/v1/list-military-flights.ts', {
+      './_shared': resolve(root, 'server/world-monitor/military/v1/_shared.ts'),
       '../../../_shared/constants': resolve(root, 'server/_shared/constants.ts'),
       '../../../_shared/redis': resolve(root, 'server/_shared/redis.ts'),
     });
@@ -266,3 +266,4 @@ describe('military flights bbox behavior', { concurrency: 1 }, () => {
     }
   });
 });
+

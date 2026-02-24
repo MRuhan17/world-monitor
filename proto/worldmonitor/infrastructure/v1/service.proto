@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package worldmonitor.infrastructure.v1;
+package world-monitor.infrastructure.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/infrastructure/v1/list_internet_outages.proto";
-import "worldmonitor/infrastructure/v1/list_service_statuses.proto";
-import "worldmonitor/infrastructure/v1/get_temporal_baseline.proto";
-import "worldmonitor/infrastructure/v1/get_cable_health.proto";
-import "worldmonitor/infrastructure/v1/record_baseline_snapshot.proto";
+import "world-monitor/infrastructure/v1/list_internet_outages.proto";
+import "world-monitor/infrastructure/v1/list_service_statuses.proto";
+import "world-monitor/infrastructure/v1/get_temporal_baseline.proto";
+import "world-monitor/infrastructure/v1/get_cable_health.proto";
+import "world-monitor/infrastructure/v1/record_baseline_snapshot.proto";
 
 // InfrastructureService provides APIs for internet outage monitoring from Cloudflare Radar,
 // external service status tracking, and temporal baseline anomaly detection.
@@ -39,3 +39,4 @@ service InfrastructureService {
     option (sebuf.http.config) = {path: "/get-cable-health"};
   }
 }
+

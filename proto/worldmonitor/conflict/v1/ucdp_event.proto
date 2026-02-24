@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package worldmonitor.conflict.v1;
+package world-monitor.conflict.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/geo.proto";
+import "world-monitor/core/v1/geo.proto";
 
 // UcdpViolenceEvent represents a georeferenced violence event from the UCDP dataset.
 message UcdpViolenceEvent {
@@ -18,7 +18,7 @@ message UcdpViolenceEvent {
   // End date of the event, as Unix epoch milliseconds.
   int64 date_end = 3 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
   // Geographic location of the event.
-  worldmonitor.core.v1.GeoCoordinates location = 4;
+  world-monitor.core.v1.GeoCoordinates location = 4;
   // Country where the event occurred.
   string country = 5;
   // Primary party in the conflict (Side A).
@@ -49,3 +49,4 @@ enum UcdpViolenceType {
   // One-sided violence against civilians.
   UCDP_VIOLENCE_TYPE_ONE_SIDED = 3;
 }
+

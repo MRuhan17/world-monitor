@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package worldmonitor.unrest.v1;
+package world-monitor.unrest.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/unrest/v1/list_unrest_events.proto";
+import "world-monitor/unrest/v1/list_unrest_events.proto";
 
 // UnrestService provides APIs for social unrest data aggregated from ACLED and GDELT.
 service UnrestService {
@@ -14,3 +14,4 @@ service UnrestService {
     option (sebuf.http.config) = {path: "/list-unrest-events"};
   }
 }
+

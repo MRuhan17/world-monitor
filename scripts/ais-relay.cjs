@@ -914,7 +914,7 @@ async function handleOpenSkyRequest(req, res, PORT) {
       const request = https.get(openskyUrl, {
         headers: {
           'Accept': 'application/json',
-          'User-Agent': 'WorldMonitor/1.0',
+          'User-Agent': 'world-monitor/1.0',
           'Authorization': `Bearer ${token}`,
         },
         timeout: 15000
@@ -1086,7 +1086,7 @@ function handleWorldBankRequest(req, res) {
   const request = https.get(wbUrl, {
     headers: {
       'Accept': 'application/json',
-      'User-Agent': 'Mozilla/5.0 (compatible; WorldMonitor/1.0; +https://worldmonitor.app)',
+      'User-Agent': 'Mozilla/5.0 (compatible; world-monitor/1.0; +https://world-monitor.app)',
     },
     timeout: 15000,
   }, (response) => {
@@ -1276,9 +1276,9 @@ setInterval(() => {
 
 // CORS origin allowlist — only our domains can use this relay
 const ALLOWED_ORIGINS = [
-  'https://worldmonitor.app',
-  'https://tech.worldmonitor.app',
-  'https://finance.worldmonitor.app',
+  'https://world-monitor.app',
+  'https://tech.world-monitor.app',
+  'https://finance.world-monitor.app',
   'http://localhost:5173',   // Vite dev
   'http://localhost:5174',   // Vite dev alt port
   'http://localhost:4173',   // Vite preview
@@ -1759,3 +1759,4 @@ setInterval(() => {
     if (global.gc) global.gc();
   }
 }, 60 * 1000);
+

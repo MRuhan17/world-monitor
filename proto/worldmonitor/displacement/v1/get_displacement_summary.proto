@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package worldmonitor.displacement.v1;
+package world-monitor.displacement.v1;
 
 import "buf/validate/validate.proto";
-import "worldmonitor/displacement/v1/displacement.proto";
+import "world-monitor/displacement/v1/displacement.proto";
 
 // GetDisplacementSummaryRequest specifies parameters for retrieving displacement data.
 message GetDisplacementSummaryRequest {
@@ -20,3 +20,4 @@ message GetDisplacementSummaryResponse {
   // The displacement summary.
   DisplacementSummary summary = 1;
 }
+

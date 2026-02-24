@@ -3,4 +3,5 @@
 // If typed IDs are adopted in the future, define them here.
 syntax = "proto3";
 
-package worldmonitor.core.v1;
+package world-monitor.core.v1;
+

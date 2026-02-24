@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package worldmonitor.wildfire.v1;
+package world-monitor.wildfire.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/geo.proto";
+import "world-monitor/core/v1/geo.proto";
 
 // FireDetection represents a satellite-detected active fire from NASA FIRMS.
 message FireDetection {
@@ -15,7 +15,7 @@ message FireDetection {
     (buf.validate.field).string.max_len = 100
   ];
   // Geographic location of the fire detection.
-  worldmonitor.core.v1.GeoCoordinates location = 2;
+  world-monitor.core.v1.GeoCoordinates location = 2;
   // Brightness temperature in Kelvin.
   double brightness = 3;
   // Fire radiative power in MW.
@@ -43,3 +43,4 @@ enum FireConfidence {
   // High confidence detection.
   FIRE_CONFIDENCE_HIGH = 3;
 }
+

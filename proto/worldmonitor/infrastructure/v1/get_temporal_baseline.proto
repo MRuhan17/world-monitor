@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.infrastructure.v1;
+package world-monitor.infrastructure.v1;
 
 import "buf/validate/validate.proto";
 
@@ -52,3 +52,4 @@ message GetTemporalBaselineResponse {
   // Error message if request was invalid.
   string error = 6;
 }
+

@@ -165,7 +165,7 @@ async function polyFetch(endpoint: 'events' | 'markets', params: Record<string, 
   } catch { /* sebuf handler failed (Cloudflare expected) */ }
 
   // Final fallback: hit production endpoint directly
-  return fetch(`https://worldmonitor.app/api/polymarket?${proxyQs}`);
+  return fetch(`https://world-monitor.app/api/polymarket?${proxyQs}`);
 }
 
 const GEOPOLITICAL_TAGS = [
@@ -471,3 +471,4 @@ export async function fetchCountryMarkets(country: string): Promise<PredictionMa
     return [];
   }
 }
+

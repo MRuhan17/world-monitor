@@ -1,7 +1,7 @@
 const DEFAULT_REMOTE_HOSTS: Record<string, string> = {
-  tech: 'https://tech.worldmonitor.app',
-  full: 'https://worldmonitor.app',
-  world: 'https://worldmonitor.app',
+  tech: 'https://tech.world-monitor.app',
+  full: 'https://world-monitor.app',
+  world: 'https://world-monitor.app',
 };
 
 const DEFAULT_LOCAL_API_BASE = 'http://127.0.0.1:46123';
@@ -82,7 +82,7 @@ export function getRemoteApiBaseUrl(): string {
   }
 
   const variant = import.meta.env.VITE_VARIANT || 'full';
-  return DEFAULT_REMOTE_HOSTS[variant] ?? DEFAULT_REMOTE_HOSTS.full ?? 'https://worldmonitor.app';
+  return DEFAULT_REMOTE_HOSTS[variant] ?? DEFAULT_REMOTE_HOSTS.full ?? 'https://world-monitor.app';
 }
 
 export function toRuntimeUrl(path: string): string {
@@ -99,9 +99,9 @@ export function toRuntimeUrl(path: string): string {
 }
 
 const APP_HOSTS = new Set([
-  'worldmonitor.app',
-  'www.worldmonitor.app',
-  'tech.worldmonitor.app',
+  'world-monitor.app',
+  'www.world-monitor.app',
+  'tech.world-monitor.app',
   'localhost',
   '127.0.0.1',
 ]);
@@ -110,7 +110,7 @@ function isAppOriginUrl(urlStr: string): boolean {
   try {
     const u = new URL(urlStr);
     const host = u.hostname;
-    return APP_HOSTS.has(host) || host.endsWith('.worldmonitor.app');
+    return APP_HOSTS.has(host) || host.endsWith('.world-monitor.app');
   } catch {
     return false;
   }
@@ -228,7 +228,7 @@ export function installRuntimeFetchPatch(): void {
       try {
         const { getSecretState, secretsReady } = await import('@/services/runtime-config');
         await Promise.race([secretsReady, new Promise<void>(r => setTimeout(r, 2000))]);
-        const wmKeyState = getSecretState('WORLDMONITOR_API_KEY');
+        const wmKeyState = getSecretState('world-monitor_API_KEY');
         if (!wmKeyState.present || !wmKeyState.valid) {
           allowCloudFallback = false;
         }
@@ -246,9 +246,9 @@ export function installRuntimeFetchPatch(): void {
       const cloudHeaders = new Headers(init?.headers);
       if (/^\/api\/[^/]+\/v1\//.test(target)) {
         const { getRuntimeConfigSnapshot } = await import('@/services/runtime-config');
-        const wmKeyValue = getRuntimeConfigSnapshot().secrets['WORLDMONITOR_API_KEY']?.value;
+        const wmKeyValue = getRuntimeConfigSnapshot().secrets['world-monitor_API_KEY']?.value;
         if (wmKeyValue) {
-          cloudHeaders.set('X-WorldMonitor-Key', wmKeyValue);
+          cloudHeaders.set('X-world-monitor-Key', wmKeyValue);
         }
       }
       return nativeFetch(cloudUrl, { ...init, headers: cloudHeaders });
@@ -278,3 +278,4 @@ export function installRuntimeFetchPatch(): void {
 
   (window as unknown as Record<string, unknown>).__wmFetchPatched = true;
 }
+

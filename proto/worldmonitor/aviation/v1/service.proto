@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package worldmonitor.aviation.v1;
+package world-monitor.aviation.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/aviation/v1/list_airport_delays.proto";
+import "world-monitor/aviation/v1/list_airport_delays.proto";
 
 // AviationService provides APIs for flight delay data from FAA and Eurocontrol.
 service AviationService {
@@ -14,3 +14,4 @@ service AviationService {
     option (sebuf.http.config) = {path: "/list-airport-delays"};
   }
 }
+

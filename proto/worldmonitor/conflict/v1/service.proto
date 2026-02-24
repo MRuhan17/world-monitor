@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package worldmonitor.conflict.v1;
+package world-monitor.conflict.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/conflict/v1/list_acled_events.proto";
-import "worldmonitor/conflict/v1/list_ucdp_events.proto";
-import "worldmonitor/conflict/v1/get_humanitarian_summary.proto";
+import "world-monitor/conflict/v1/list_acled_events.proto";
+import "world-monitor/conflict/v1/list_ucdp_events.proto";
+import "world-monitor/conflict/v1/get_humanitarian_summary.proto";
 
 // ConflictService provides APIs for armed conflict data from ACLED, UCDP, and HAPI/HDX.
 service ConflictService {
@@ -26,3 +26,4 @@ service ConflictService {
     option (sebuf.http.config) = {path: "/get-humanitarian-summary"};
   }
 }
+

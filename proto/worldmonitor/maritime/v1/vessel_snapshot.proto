@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package worldmonitor.maritime.v1;
+package world-monitor.maritime.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/geo.proto";
+import "world-monitor/core/v1/geo.proto";
 
 // VesselSnapshot represents a point-in-time view of civilian AIS vessel data.
 message VesselSnapshot {
@@ -26,7 +26,7 @@ message AisDensityZone {
   // Zone name (e.g., "Strait of Malacca").
   string name = 2;
   // Zone centroid location.
-  worldmonitor.core.v1.GeoCoordinates location = 3;
+  world-monitor.core.v1.GeoCoordinates location = 3;
   // Traffic intensity score (0-100).
   double intensity = 4 [
     (buf.validate.field).double.gte = 0,
@@ -52,7 +52,7 @@ message AisDisruption {
   // Type of AIS disruption.
   AisDisruptionType type = 3;
   // Location of the disruption.
-  worldmonitor.core.v1.GeoCoordinates location = 4;
+  world-monitor.core.v1.GeoCoordinates location = 4;
   // Disruption severity.
   AisDisruptionSeverity severity = 5;
   // Percentage change from normal.
@@ -80,7 +80,7 @@ message NavigationalWarning {
   // Geographic area affected.
   string area = 4;
   // Location of the warning.
-  worldmonitor.core.v1.GeoCoordinates location = 5;
+  world-monitor.core.v1.GeoCoordinates location = 5;
   // Warning issue date, as Unix epoch milliseconds.
   int64 issued_at = 6 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
   // Warning expiry date, as Unix epoch milliseconds.
@@ -111,3 +111,4 @@ enum AisDisruptionSeverity {
   // High severity — significant anomaly.
   AIS_DISRUPTION_SEVERITY_HIGH = 3;
 }
+

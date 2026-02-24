@@ -22,7 +22,7 @@ export type RuntimeSecretKey =
   | 'UC_DP_KEY'
   | 'OLLAMA_API_URL'
   | 'OLLAMA_MODEL'
-  | 'WORLDMONITOR_API_KEY';
+  | 'world-monitor_API_KEY';
 
 export type RuntimeFeatureId =
   | 'aiGroq'
@@ -60,7 +60,7 @@ export interface RuntimeConfig {
   secrets: Partial<Record<RuntimeSecretKey, RuntimeSecretState>>;
 }
 
-const TOGGLES_STORAGE_KEY = 'worldmonitor-runtime-feature-toggles';
+const TOGGLES_STORAGE_KEY = 'world-monitor-runtime-feature-toggles';
 const SIDECAR_ENV_UPDATE_URL = 'http://127.0.0.1:46123/api/local-env-update';
 const SIDECAR_SECRET_VALIDATE_URL = 'http://127.0.0.1:46123/api/local-validate-secret';
 
@@ -241,7 +241,7 @@ export function validateSecret(key: RuntimeSecretKey, value: string): { valid: b
     }
   }
 
-  if (key === 'WORLDMONITOR_API_KEY') {
+  if (key === 'world-monitor_API_KEY') {
     if (trimmed.length < 16) return { valid: false, hint: 'API key must be at least 16 characters' };
     return { valid: true };
   }
@@ -503,3 +503,4 @@ export async function loadDesktopSecrets(): Promise<void> {
     secretsReadyResolve();
   }
 }
+

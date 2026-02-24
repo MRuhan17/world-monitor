@@ -8,8 +8,8 @@ type CacheEnvelope<T> = {
   data: T;
 };
 
-const CACHE_PREFIX = 'worldmonitor-persistent-cache:';
-const CACHE_DB_NAME = 'worldmonitor_persistent_cache';
+const CACHE_PREFIX = 'world-monitor-persistent-cache:';
+const CACHE_DB_NAME = 'world-monitor_persistent_cache';
 const CACHE_DB_VERSION = 1;
 const CACHE_STORE = 'entries';
 
@@ -174,3 +174,4 @@ export function describeFreshness(updatedAt: number): string {
   if (hrs < 24) return `${hrs}h ago`;
   return `${Math.floor(hrs / 24)}d ago`;
 }
+

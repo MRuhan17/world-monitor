@@ -1,7 +1,7 @@
 import './styles/main.css';
 import './styles/settings-window.css';
 import { RuntimeConfigPanel } from '@/components/RuntimeConfigPanel';
-import { WorldMonitorTab } from '@/components/WorldMonitorTab';
+import { world-monitorTab } from '@/components/world-monitorTab';
 import { RUNTIME_FEATURES, loadDesktopSecrets } from '@/services/runtime-config';
 import { tryInvokeTauri } from '@/services/tauri-bridge';
 import { escapeHtml } from '@/utils/sanitize';
@@ -84,17 +84,17 @@ async function initSettingsWindow(): Promise<void> {
 
   const llmMount = document.getElementById('llmApp');
   const apiMount = document.getElementById('apiKeysApp');
-  const wmMount = document.getElementById('worldmonitorApp');
+  const wmMount = document.getElementById('world-monitorApp');
   if (!llmMount || !apiMount) return;
 
-  // Mount WorldMonitor tab immediately — it doesn't depend on secrets
-  const wmTab = new WorldMonitorTab();
+  // Mount world-monitor tab immediately — it doesn't depend on secrets
+  const wmTab = new world-monitorTab();
   if (wmMount) {
     wmMount.innerHTML = '';
     wmMount.appendChild(wmTab.getElement());
   }
 
-  // Load secrets then refresh WorldMonitor tab to reflect actual key status
+  // Load secrets then refresh world-monitor tab to reflect actual key status
   await loadDesktopSecrets();
   wmTab.refresh();
 
@@ -266,3 +266,4 @@ localStorage.setItem('wm-settings-open', '1');
 window.addEventListener('beforeunload', () => localStorage.removeItem('wm-settings-open'));
 
 void initSettingsWindow();
+

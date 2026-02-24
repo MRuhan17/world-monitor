@@ -171,7 +171,7 @@ All notable changes to World Monitor are documented here.
 
 ### Added
 
-- **Finance variant**: Added a dedicated market-first variant (`finance.worldmonitor.app`) with finance/trading-focused feeds, panels, and map defaults
+- **Finance variant**: Added a dedicated market-first variant (`finance.world-monitor.app`) with finance/trading-focused feeds, panels, and map defaults
 - **Finance desktop profile**: Added finance-specific desktop config and build profile for Tauri packaging
 
 ### Changed
@@ -250,7 +250,7 @@ All notable changes to World Monitor are documented here.
 
 ### Security
 
-- **CORS hardening**: Tighten Vercel preview deployment regex to block origin spoofing (`worldmonitorEVIL.vercel.app`)
+- **CORS hardening**: Tighten Vercel preview deployment regex to block origin spoofing (`world-monitorEVIL.vercel.app`)
 - **Sidecar auth bypass**: Move `/api/local-env-update` behind `LOCAL_API_TOKEN` auth check
 - **Env key allowlist**: Restrict sidecar env mutations to 18 known secret keys (matching `SUPPORTED_SECRET_KEYS`)
 - **postMessage validation**: Add `origin` and `source` checks on incoming messages in LiveNewsPanel
@@ -348,3 +348,4 @@ All notable changes to World Monitor are documented here.
 ## [2.2.0] - 2026-02-07
 
 Initial v2.2 release with multi-variant support (World + Tech), desktop app (Tauri), and comprehensive geopolitical intelligence features.
+

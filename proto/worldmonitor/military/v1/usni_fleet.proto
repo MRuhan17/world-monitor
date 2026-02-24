@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.military.v1;
+package world-monitor.military.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
@@ -84,3 +84,4 @@ message USNIFleetReport {
   // Time the report was generated, as Unix epoch milliseconds.
   int64 timestamp = 9 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
 }
+

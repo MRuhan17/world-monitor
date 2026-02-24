@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package worldmonitor.research.v1;
+package world-monitor.research.v1;
 
-import "worldmonitor/core/v1/pagination.proto";
-import "worldmonitor/research/v1/research_item.proto";
+import "world-monitor/core/v1/pagination.proto";
+import "world-monitor/research/v1/research_item.proto";
 
 // ListTrendingReposRequest specifies filters for retrieving trending GitHub repos.
 message ListTrendingReposRequest {
   // Pagination parameters.
-  worldmonitor.core.v1.PaginationRequest pagination = 1;
+  world-monitor.core.v1.PaginationRequest pagination = 1;
   // Programming language filter (e.g., "python", "typescript").
   string language = 2;
   // Trending period (e.g., "daily", "weekly"). Defaults to "daily".
@@ -20,5 +20,6 @@ message ListTrendingReposResponse {
   // The list of trending repos.
   repeated GithubRepo repos = 1;
   // Pagination metadata.
-  worldmonitor.core.v1.PaginationResponse pagination = 2;
+  world-monitor.core.v1.PaginationResponse pagination = 2;
 }
+

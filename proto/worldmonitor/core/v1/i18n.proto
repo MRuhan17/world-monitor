@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package worldmonitor.core.v1;
+package world-monitor.core.v1;
 
 import "buf/validate/validate.proto";
 
 // LocalizableString represents a string value with its associated language.
-// Used for API response strings that may have locale context. WorldMonitor receives
+// Used for API response strings that may have locale context. world-monitor receives
 // pre-localized strings from upstream APIs, so this is a simple value+language pair
 // rather than a full translation system.
 message LocalizableString {
@@ -17,3 +17,4 @@ message LocalizableString {
   // BCP 47 language tag (e.g., "en", "ar", "fr").
   string language = 2;
 }
+

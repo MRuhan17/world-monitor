@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.core.v1;
+package world-monitor.core.v1;
 
 import "sebuf/http/annotations.proto";
 
@@ -12,3 +12,4 @@ message TimeRange {
   // End of the time range (inclusive), as Unix epoch milliseconds.
   int64 end = 2 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
 }
+

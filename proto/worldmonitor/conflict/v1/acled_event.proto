@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package worldmonitor.conflict.v1;
+package world-monitor.conflict.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/geo.proto";
+import "world-monitor/core/v1/geo.proto";
 
 // AcledConflictEvent represents an armed conflict event from the ACLED dataset.
 message AcledConflictEvent {
@@ -18,7 +18,7 @@ message AcledConflictEvent {
   // Country where the event occurred.
   string country = 3;
   // Geographic location of the event.
-  worldmonitor.core.v1.GeoCoordinates location = 4;
+  world-monitor.core.v1.GeoCoordinates location = 4;
   // Time the event occurred, as Unix epoch milliseconds.
   int64 occurred_at = 5 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
   // Reported fatalities from this event.
@@ -30,3 +30,4 @@ message AcledConflictEvent {
   // Administrative region within the country.
   string admin1 = 9;
 }
+

@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package worldmonitor.military.v1;
+package world-monitor.military.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/military/v1/list_military_flights.proto";
-import "worldmonitor/military/v1/get_theater_posture.proto";
-import "worldmonitor/military/v1/get_aircraft_details.proto";
-import "worldmonitor/military/v1/get_aircraft_details_batch.proto";
-import "worldmonitor/military/v1/get_wingbits_status.proto";
-import "worldmonitor/military/v1/get_usni_fleet_report.proto";
+import "world-monitor/military/v1/list_military_flights.proto";
+import "world-monitor/military/v1/get_theater_posture.proto";
+import "world-monitor/military/v1/get_aircraft_details.proto";
+import "world-monitor/military/v1/get_aircraft_details_batch.proto";
+import "world-monitor/military/v1/get_wingbits_status.proto";
+import "world-monitor/military/v1/get_usni_fleet_report.proto";
 
 // MilitaryService provides APIs for military flight and vessel tracking
 // sourced from OpenSky, Wingbits, and AIS data.
@@ -45,3 +45,4 @@ service MilitaryService {
     option (sebuf.http.config) = {path: "/get-usni-fleet-report"};
   }
 }
+

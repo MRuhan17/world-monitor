@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package worldmonitor.intelligence.v1;
+package world-monitor.intelligence.v1;
 
-import "worldmonitor/intelligence/v1/intelligence.proto";
+import "world-monitor/intelligence/v1/intelligence.proto";
 
 // GetPizzintStatusRequest specifies parameters for retrieving PizzINT and GDELT data.
 message GetPizzintStatusRequest {
@@ -17,3 +17,4 @@ message GetPizzintStatusResponse {
   // GDELT bilateral tension pairs.
   repeated GdeltTensionPair tension_pairs = 2;
 }
+

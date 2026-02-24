@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package worldmonitor.climate.v1;
+package world-monitor.climate.v1;
 
 import "buf/validate/validate.proto";
-import "worldmonitor/core/v1/geo.proto";
+import "world-monitor/core/v1/geo.proto";
 
 // ClimateAnomaly represents a temperature or precipitation deviation from historical norms.
 // Sourced from Open-Meteo / ERA5 reanalysis data.
@@ -14,7 +14,7 @@ message ClimateAnomaly {
     (buf.validate.field).string.min_len = 1
   ];
   // Representative location for the anomaly zone.
-  worldmonitor.core.v1.GeoCoordinates location = 2;
+  world-monitor.core.v1.GeoCoordinates location = 2;
   // Temperature deviation from normal in degrees Celsius.
   double temp_delta = 3;
   // Precipitation deviation from normal as a percentage.
@@ -59,3 +59,4 @@ enum AnomalyType {
   // Mixed — combination of temperature and precipitation anomalies.
   ANOMALY_TYPE_MIXED = 5;
 }
+

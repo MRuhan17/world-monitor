@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.infrastructure.v1;
+package world-monitor.infrastructure.v1;
 
 import "sebuf/http/annotations.proto";
 
@@ -50,3 +50,4 @@ message CableHealthEvidence {
   // Evidence timestamp, as Unix epoch milliseconds.
   int64 ts = 3 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
 }
+

@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package worldmonitor.cyber.v1;
+package world-monitor.cyber.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/cyber/v1/list_cyber_threats.proto";
+import "world-monitor/cyber/v1/list_cyber_threats.proto";
 
 // CyberService provides APIs for cyber threat intelligence aggregated from
 // Feodo, URLhaus, OTX, AbuseIPDB, and C2Intel.
@@ -15,3 +15,4 @@ service CyberService {
     option (sebuf.http.config) = {path: "/list-cyber-threats"};
   }
 }
+

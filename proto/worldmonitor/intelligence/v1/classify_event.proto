@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package worldmonitor.intelligence.v1;
+package world-monitor.intelligence.v1;
 
 import "buf/validate/validate.proto";
-import "worldmonitor/intelligence/v1/intelligence.proto";
+import "world-monitor/intelligence/v1/intelligence.proto";
 
 // ClassifyEventRequest specifies an event to classify using AI.
 message ClassifyEventRequest {
@@ -25,3 +25,4 @@ message ClassifyEventResponse {
   // The event classification.
   EventClassification classification = 1;
 }
+

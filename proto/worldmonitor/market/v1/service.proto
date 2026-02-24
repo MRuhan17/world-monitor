@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-package worldmonitor.market.v1;
+package world-monitor.market.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/market/v1/list_market_quotes.proto";
-import "worldmonitor/market/v1/list_crypto_quotes.proto";
-import "worldmonitor/market/v1/list_commodity_quotes.proto";
-import "worldmonitor/market/v1/get_sector_summary.proto";
-import "worldmonitor/market/v1/list_stablecoin_markets.proto";
-import "worldmonitor/market/v1/list_etf_flows.proto";
-import "worldmonitor/market/v1/get_country_stock_index.proto";
+import "world-monitor/market/v1/list_market_quotes.proto";
+import "world-monitor/market/v1/list_crypto_quotes.proto";
+import "world-monitor/market/v1/list_commodity_quotes.proto";
+import "world-monitor/market/v1/get_sector_summary.proto";
+import "world-monitor/market/v1/list_stablecoin_markets.proto";
+import "world-monitor/market/v1/list_etf_flows.proto";
+import "world-monitor/market/v1/get_country_stock_index.proto";
 
 // MarketService provides APIs for financial market data from Finnhub, Yahoo Finance, and CoinGecko.
 service MarketService {
@@ -50,3 +50,4 @@ service MarketService {
     option (sebuf.http.config) = {path: "/get-country-stock-index"};
   }
 }
+

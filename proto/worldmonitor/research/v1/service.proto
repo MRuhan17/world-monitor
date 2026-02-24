@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package worldmonitor.research.v1;
+package world-monitor.research.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/research/v1/list_arxiv_papers.proto";
-import "worldmonitor/research/v1/list_trending_repos.proto";
-import "worldmonitor/research/v1/list_hackernews_items.proto";
-import "worldmonitor/research/v1/list_tech_events.proto";
+import "world-monitor/research/v1/list_arxiv_papers.proto";
+import "world-monitor/research/v1/list_trending_repos.proto";
+import "world-monitor/research/v1/list_hackernews_items.proto";
+import "world-monitor/research/v1/list_tech_events.proto";
 
 // ResearchService provides APIs for academic papers, trending repos, and tech news.
 service ResearchService {
@@ -32,3 +32,4 @@ service ResearchService {
     option (sebuf.http.config) = {path: "/list-tech-events"};
   }
 }
+

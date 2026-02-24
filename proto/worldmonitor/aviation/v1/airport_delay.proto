@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package worldmonitor.aviation.v1;
+package world-monitor.aviation.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/geo.proto";
+import "world-monitor/core/v1/geo.proto";
 
 // AirportDelayAlert represents a flight delay advisory at an airport.
 // Sourced from FAA and Eurocontrol.
@@ -25,7 +25,7 @@ message AirportDelayAlert {
   // Country code (ISO 3166-1 alpha-2).
   string country = 6;
   // Airport location.
-  worldmonitor.core.v1.GeoCoordinates location = 7;
+  world-monitor.core.v1.GeoCoordinates location = 7;
   // Geographic region.
   AirportRegion region = 8;
   // Type of delay.
@@ -108,3 +108,4 @@ enum FlightDelaySource {
   // Computed from multiple sources.
   FLIGHT_DELAY_SOURCE_COMPUTED = 3;
 }
+

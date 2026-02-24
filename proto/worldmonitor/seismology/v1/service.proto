@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package worldmonitor.seismology.v1;
+package world-monitor.seismology.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/seismology/v1/list_earthquakes.proto";
+import "world-monitor/seismology/v1/list_earthquakes.proto";
 
 // SeismologyService provides APIs for earthquake monitoring data sourced from USGS.
 service SeismologyService {
@@ -14,3 +14,4 @@ service SeismologyService {
     option (sebuf.http.config) = {path: "/list-earthquakes"};
   }
 }
+

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.market.v1;
+package world-monitor.market.v1;
 
 import "buf/validate/validate.proto";
 
@@ -71,3 +71,4 @@ message SectorPerformance {
   // Percentage change over the measured period.
   double change = 3;
 }
+

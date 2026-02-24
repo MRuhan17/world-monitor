@@ -31,11 +31,11 @@ export const MONITOR_COLORS = [
 
 // Storage keys - shared
 export const STORAGE_KEYS = {
-  panels: 'worldmonitor-panels',
-  monitors: 'worldmonitor-monitors',
-  mapLayers: 'worldmonitor-layers',
-  disabledFeeds: 'worldmonitor-disabled-feeds',
-  liveChannels: 'worldmonitor-live-channels',
+  panels: 'world-monitor-panels',
+  monitors: 'world-monitor-monitors',
+  mapLayers: 'world-monitor-layers',
+  disabledFeeds: 'world-monitor-disabled-feeds',
+  liveChannels: 'world-monitor-live-channels',
 } as const;
 
 // Type definitions for variant configs
@@ -46,3 +46,4 @@ export interface VariantConfig {
   mapLayers: MapLayers;
   mobileMapLayers: MapLayers;
 }
+

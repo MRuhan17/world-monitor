@@ -1,4 +1,4 @@
-# WorldMonitor - protect API routes from crawlers
+# world-monitor - protect API routes from crawlers
 User-agent: *
 Allow: /
 Disallow: /api/
@@ -24,3 +24,4 @@ Allow: /api/og-story
 User-agent: Discordbot
 Allow: /api/story
 Allow: /api/og-story
+

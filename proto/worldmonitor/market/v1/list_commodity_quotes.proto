@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package worldmonitor.market.v1;
+package world-monitor.market.v1;
 
-import "worldmonitor/market/v1/market_quote.proto";
+import "world-monitor/market/v1/market_quote.proto";
 
 // ListCommodityQuotesRequest specifies which commodities to retrieve.
 message ListCommodityQuotesRequest {
@@ -15,3 +15,4 @@ message ListCommodityQuotesResponse {
   // The list of commodity quotes.
   repeated CommodityQuote quotes = 1;
 }
+

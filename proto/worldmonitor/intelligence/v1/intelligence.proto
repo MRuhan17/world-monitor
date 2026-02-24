@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package worldmonitor.intelligence.v1;
+package world-monitor.intelligence.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/severity.proto";
+import "world-monitor/core/v1/severity.proto";
 
 // CiiScore represents a Composite Instability Index score for a region or country.
 message CiiScore {
@@ -26,7 +26,7 @@ message CiiScore {
     (buf.validate.field).double.lte = 100
   ];
   // Score trend direction.
-  worldmonitor.core.v1.TrendDirection trend = 5;
+  world-monitor.core.v1.TrendDirection trend = 5;
   // Contributing component scores.
   CiiComponents components = 6;
   // Last computation time, as Unix epoch milliseconds.
@@ -62,7 +62,7 @@ message StrategicRisk {
   // Country or region identifier.
   string region = 1;
   // Risk level.
-  worldmonitor.core.v1.SeverityLevel level = 2;
+  world-monitor.core.v1.SeverityLevel level = 2;
   // Risk score (0-100).
   double score = 3 [
     (buf.validate.field).double.gte = 0,
@@ -71,7 +71,7 @@ message StrategicRisk {
   // Risk factors contributing to the assessment.
   repeated string factors = 4;
   // Trend direction.
-  worldmonitor.core.v1.TrendDirection trend = 5;
+  world-monitor.core.v1.TrendDirection trend = 5;
 }
 
 // PizzintStatus represents the Pentagon Pizza Index status (proxy for late-night DC activity).
@@ -143,7 +143,7 @@ message GdeltTensionPair {
     (buf.validate.field).double.lte = 100
   ];
   // Trend direction.
-  worldmonitor.core.v1.TrendDirection trend = 5;
+  world-monitor.core.v1.TrendDirection trend = 5;
   // Percentage change from previous period.
   double change_percent = 6;
   // Geographic region.
@@ -157,7 +157,7 @@ message EventClassification {
   // Event subcategory.
   string subcategory = 2;
   // Severity assessment.
-  worldmonitor.core.v1.SeverityLevel severity = 3;
+  world-monitor.core.v1.SeverityLevel severity = 3;
   // Classification confidence (0.0 to 1.0).
   double confidence = 4 [
     (buf.validate.field).double.gte = 0,
@@ -178,3 +178,4 @@ enum DataFreshness {
   // Stale — data may be outdated.
   DATA_FRESHNESS_STALE = 2;
 }
+

@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package worldmonitor.cyber.v1;
+package world-monitor.cyber.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/geo.proto";
-import "worldmonitor/core/v1/severity.proto";
+import "world-monitor/core/v1/geo.proto";
+import "world-monitor/core/v1/severity.proto";
 
 // CyberThreat represents a cyber threat indicator aggregated from multiple sources.
 // Sources include Feodo Tracker, URLhaus, OTX, AbuseIPDB, and C2Intel.
@@ -24,11 +24,11 @@ message CyberThreat {
   // Type of the indicator.
   CyberThreatIndicatorType indicator_type = 5;
   // Geolocation of the threat indicator.
-  worldmonitor.core.v1.GeoCoordinates location = 6;
+  world-monitor.core.v1.GeoCoordinates location = 6;
   // Country of origin (ISO 3166-1 alpha-2).
   string country = 7;
   // Threat criticality level.
-  worldmonitor.core.v1.CriticalityLevel severity = 8;
+  world-monitor.core.v1.CriticalityLevel severity = 8;
   // Associated malware family, if known.
   string malware_family = 9;
   // Descriptive tags.
@@ -83,3 +83,4 @@ enum CyberThreatIndicatorType {
   // Full URL.
   CYBER_THREAT_INDICATOR_TYPE_URL = 3;
 }
+

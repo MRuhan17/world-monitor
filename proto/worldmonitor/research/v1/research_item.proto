@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.research.v1;
+package world-monitor.research.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
@@ -70,3 +70,4 @@ message HackernewsItem {
   // Submission time, as Unix epoch milliseconds.
   int64 submitted_at = 7 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
 }
+

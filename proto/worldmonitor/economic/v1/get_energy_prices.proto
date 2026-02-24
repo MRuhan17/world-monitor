@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package worldmonitor.economic.v1;
+package world-monitor.economic.v1;
 
-import "worldmonitor/economic/v1/economic_data.proto";
+import "world-monitor/economic/v1/economic_data.proto";
 
 // GetEnergyPricesRequest specifies which energy commodities to retrieve.
 message GetEnergyPricesRequest {
@@ -15,3 +15,4 @@ message GetEnergyPricesResponse {
   // The list of energy prices.
   repeated EnergyPrice prices = 1;
 }
+

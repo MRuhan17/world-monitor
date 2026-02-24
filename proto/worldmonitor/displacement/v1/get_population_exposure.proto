@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.displacement.v1;
+package world-monitor.displacement.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
@@ -58,3 +58,4 @@ message GetPopulationExposureResponse {
   // Exposure result (populated in exposure mode).
   ExposureResult exposure = 3;
 }
+

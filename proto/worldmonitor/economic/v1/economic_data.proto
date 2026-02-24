@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.economic.v1;
+package world-monitor.economic.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
@@ -70,3 +70,4 @@ message EnergyPrice {
   // Price date, as Unix epoch milliseconds.
   int64 price_at = 6 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
 }
+

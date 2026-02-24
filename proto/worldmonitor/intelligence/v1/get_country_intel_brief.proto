@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.intelligence.v1;
+package world-monitor.intelligence.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
@@ -28,3 +28,4 @@ message GetCountryIntelBriefResponse {
   // Brief generation time, as Unix epoch milliseconds.
   int64 generated_at = 5 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
 }
+

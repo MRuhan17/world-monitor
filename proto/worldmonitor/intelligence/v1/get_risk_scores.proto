@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package worldmonitor.intelligence.v1;
+package world-monitor.intelligence.v1;
 
-import "worldmonitor/intelligence/v1/intelligence.proto";
+import "world-monitor/intelligence/v1/intelligence.proto";
 
 // GetRiskScoresRequest specifies parameters for retrieving risk scores.
 message GetRiskScoresRequest {
@@ -17,3 +17,4 @@ message GetRiskScoresResponse {
   // Strategic risk assessments.
   repeated StrategicRisk strategic_risks = 2;
 }
+

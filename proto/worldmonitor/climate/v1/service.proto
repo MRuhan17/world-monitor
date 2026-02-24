@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package worldmonitor.climate.v1;
+package world-monitor.climate.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/climate/v1/list_climate_anomalies.proto";
+import "world-monitor/climate/v1/list_climate_anomalies.proto";
 
 // ClimateService provides APIs for climate anomaly data sourced from Open-Meteo.
 service ClimateService {
@@ -14,3 +14,4 @@ service ClimateService {
     option (sebuf.http.config) = {path: "/list-climate-anomalies"};
   }
 }
+

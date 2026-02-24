@@ -4,8 +4,8 @@ import handler from './og-story.js';
 
 function renderOgStory(query = '') {
   const req = {
-    url: `https://worldmonitor.app/api/og-story${query ? `?${query}` : ''}`,
-    headers: { host: 'worldmonitor.app' },
+    url: `https://world-monitor.app/api/og-story${query ? `?${query}` : ''}`,
+    headers: { host: 'world-monitor.app' },
   };
 
   let statusCode = 0;
@@ -45,4 +45,5 @@ test('uses a known level when it is allowlisted', () => {
   assert.match(response.body, />CRITICAL<\/text>/);
   assert.match(response.body, /#ef4444/);
 });
+
 

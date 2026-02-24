@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package worldmonitor.news.v1;
+package world-monitor.news.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/geo.proto";
+import "world-monitor/core/v1/geo.proto";
 
 // NewsItem represents a single news article from RSS feed aggregation.
 message NewsItem {
@@ -27,7 +27,7 @@ message NewsItem {
   // Threat classification, if assessed.
   ThreatClassification threat = 6;
   // Geolocation extracted from the article.
-  worldmonitor.core.v1.GeoCoordinates location = 7;
+  world-monitor.core.v1.GeoCoordinates location = 7;
   // Human-readable location name.
   string location_name = 8;
 }
@@ -70,3 +70,4 @@ enum ThreatLevel {
   // Critical threat — immediate attention required.
   THREAT_LEVEL_CRITICAL = 4;
 }
+

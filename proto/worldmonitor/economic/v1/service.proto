@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package worldmonitor.economic.v1;
+package world-monitor.economic.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/economic/v1/get_fred_series.proto";
-import "worldmonitor/economic/v1/list_world_bank_indicators.proto";
-import "worldmonitor/economic/v1/get_energy_prices.proto";
-import "worldmonitor/economic/v1/get_macro_signals.proto";
+import "world-monitor/economic/v1/get_fred_series.proto";
+import "world-monitor/economic/v1/list_world_bank_indicators.proto";
+import "world-monitor/economic/v1/get_energy_prices.proto";
+import "world-monitor/economic/v1/get_macro_signals.proto";
 
 // EconomicService provides APIs for macroeconomic data from FRED, World Bank, and EIA.
 service EconomicService {
@@ -32,3 +32,4 @@ service EconomicService {
     option (sebuf.http.config) = {path: "/get-macro-signals"};
   }
 }
+

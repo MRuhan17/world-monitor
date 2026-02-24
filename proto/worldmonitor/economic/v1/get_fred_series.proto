@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package worldmonitor.economic.v1;
+package world-monitor.economic.v1;
 
 import "buf/validate/validate.proto";
-import "worldmonitor/economic/v1/economic_data.proto";
+import "world-monitor/economic/v1/economic_data.proto";
 
 // GetFredSeriesRequest specifies which FRED series to retrieve.
 message GetFredSeriesRequest {
@@ -21,3 +21,4 @@ message GetFredSeriesResponse {
   // The FRED time series.
   FredSeries series = 1;
 }
+

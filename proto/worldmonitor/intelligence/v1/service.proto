@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package worldmonitor.intelligence.v1;
+package world-monitor.intelligence.v1;
 
 import "sebuf/http/annotations.proto";
-import "worldmonitor/intelligence/v1/get_risk_scores.proto";
-import "worldmonitor/intelligence/v1/get_pizzint_status.proto";
-import "worldmonitor/intelligence/v1/classify_event.proto";
-import "worldmonitor/intelligence/v1/get_country_intel_brief.proto";
-import "worldmonitor/intelligence/v1/search_gdelt_documents.proto";
+import "world-monitor/intelligence/v1/get_risk_scores.proto";
+import "world-monitor/intelligence/v1/get_pizzint_status.proto";
+import "world-monitor/intelligence/v1/classify_event.proto";
+import "world-monitor/intelligence/v1/get_country_intel_brief.proto";
+import "world-monitor/intelligence/v1/search_gdelt_documents.proto";
 
 // IntelligenceService provides APIs for cross-domain intelligence synthesis including
 // risk scores, PizzINT monitoring, GDELT tension analysis, and AI-powered classification.
@@ -39,3 +39,4 @@ service IntelligenceService {
     option (sebuf.http.config) = {path: "/search-gdelt-documents"};
   }
 }
+

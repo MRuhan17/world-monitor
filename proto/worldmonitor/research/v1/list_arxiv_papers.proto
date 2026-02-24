@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package worldmonitor.research.v1;
+package world-monitor.research.v1;
 
-import "worldmonitor/core/v1/pagination.proto";
-import "worldmonitor/research/v1/research_item.proto";
+import "world-monitor/core/v1/pagination.proto";
+import "world-monitor/research/v1/research_item.proto";
 
 // ListArxivPapersRequest specifies filters for retrieving arXiv papers.
 message ListArxivPapersRequest {
   // Pagination parameters.
-  worldmonitor.core.v1.PaginationRequest pagination = 1;
+  world-monitor.core.v1.PaginationRequest pagination = 1;
   // arXiv category filter (e.g., "cs.AI"). Empty returns all tracked categories.
   string category = 2;
   // Search query for paper titles and abstracts.
@@ -20,5 +20,6 @@ message ListArxivPapersResponse {
   // The list of arXiv papers.
   repeated ArxivPaper papers = 1;
   // Pagination metadata.
-  worldmonitor.core.v1.PaginationResponse pagination = 2;
+  world-monitor.core.v1.PaginationResponse pagination = 2;
 }
+

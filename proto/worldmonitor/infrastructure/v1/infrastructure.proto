@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package worldmonitor.infrastructure.v1;
+package world-monitor.infrastructure.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/geo.proto";
+import "world-monitor/core/v1/geo.proto";
 
 // InternetOutage represents a detected internet outage event from Cloudflare Radar.
 message InternetOutage {
@@ -26,7 +26,7 @@ message InternetOutage {
   // Affected region within the country.
   string region = 7;
   // Outage location.
-  worldmonitor.core.v1.GeoCoordinates location = 8;
+  world-monitor.core.v1.GeoCoordinates location = 8;
   // Outage severity.
   OutageSeverity severity = 9;
   // Affected infrastructure categories.
@@ -85,3 +85,4 @@ enum ServiceOperationalStatus {
   // Service is under maintenance.
   SERVICE_OPERATIONAL_STATUS_MAINTENANCE = 5;
 }
+

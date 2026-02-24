@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.military.v1;
+package world-monitor.military.v1;
 
 import "buf/validate/validate.proto";
 
@@ -54,3 +54,4 @@ message GetAircraftDetailsResponse {
   // Whether the Wingbits API is configured.
   bool configured = 2;
 }
+

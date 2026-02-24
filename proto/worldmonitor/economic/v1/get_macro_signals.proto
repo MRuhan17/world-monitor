@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.economic.v1;
+package world-monitor.economic.v1;
 
 import "buf/validate/validate.proto";
 
@@ -131,3 +131,4 @@ message MacroMeta {
   // Last 30 QQQ close prices for sparkline.
   repeated double qqq_sparkline = 1;
 }
+

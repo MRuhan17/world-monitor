@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worldmonitor.core.v1;
+package world-monitor.core.v1;
 
 import "sebuf/http/annotations.proto";
 
@@ -51,3 +51,4 @@ message MaintenanceMode {
   // Estimated time when maintenance will end, as Unix epoch milliseconds.
   int64 estimated_end = 1 [(sebuf.http.int64_encoding) = INT64_ENCODING_NUMBER];
 }
+

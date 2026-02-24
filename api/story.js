@@ -61,7 +61,7 @@ export default function handler(req, res) {
   <meta property="og:site_name" content="World Monitor"/>
 
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:site" content="@WorldMonitorApp"/>
+  <meta name="twitter:site" content="@world-monitorApp"/>
   <meta name="twitter:title" content="${esc(title)}"/>
   <meta name="twitter:description" content="${esc(description)}"/>
   <meta name="twitter:image" content="${esc(imageUrl)}"/>
@@ -83,3 +83,4 @@ export default function handler(req, res) {
 function esc(str) {
   return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
+

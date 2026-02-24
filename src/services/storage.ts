@@ -1,4 +1,4 @@
-const DB_NAME = 'worldmonitor_db';
+const DB_NAME = 'world-monitor_db';
 const DB_VERSION = 1;
 
 interface BaselineEntry {
@@ -227,3 +227,4 @@ export async function getSnapshotTimestamps(): Promise<number[]> {
     'snapshots', 'readonly', (store) => store.getAllKeys() as IDBRequest<number[]>, true,
   )) || [];
 }
+

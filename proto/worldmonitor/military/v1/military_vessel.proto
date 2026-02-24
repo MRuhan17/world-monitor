@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package worldmonitor.military.v1;
+package world-monitor.military.v1;
 
 import "buf/validate/validate.proto";
 import "sebuf/http/annotations.proto";
-import "worldmonitor/core/v1/geo.proto";
-import "worldmonitor/military/v1/military_flight.proto";
+import "world-monitor/core/v1/geo.proto";
+import "world-monitor/military/v1/military_flight.proto";
 
 // MilitaryVessel represents a tracked military or special vessel from AIS data.
 message MilitaryVessel {
@@ -29,7 +29,7 @@ message MilitaryVessel {
   // Country operating the vessel (ISO 3166-1 alpha-2).
   string operator_country = 8;
   // Current position.
-  worldmonitor.core.v1.GeoCoordinates location = 9;
+  world-monitor.core.v1.GeoCoordinates location = 9;
   // Heading in degrees.
   double heading = 10;
   // Speed in knots.
@@ -63,7 +63,7 @@ message MilitaryVesselCluster {
   // Descriptive name of the cluster.
   string name = 2;
   // Cluster centroid location.
-  worldmonitor.core.v1.GeoCoordinates location = 3;
+  world-monitor.core.v1.GeoCoordinates location = 3;
   // Number of vessels in the cluster.
   int32 vessel_count = 4;
   // The vessels in this cluster.
@@ -117,3 +117,4 @@ enum MilitaryVesselType {
   // Unknown vessel type.
   MILITARY_VESSEL_TYPE_UNKNOWN = 11;
 }
+
