@@ -1,7 +1,7 @@
 import './styles/main.css';
 import './styles/settings-window.css';
 import { RuntimeConfigPanel } from '@/components/RuntimeConfigPanel';
-import { world-monitorTab } from '@/components/world-monitorTab';
+import { WorldMonitorTab } from '@/components/WorldMonitorTab';
 import { RUNTIME_FEATURES, loadDesktopSecrets } from '@/services/runtime-config';
 import { tryInvokeTauri } from '@/services/tauri-bridge';
 import { escapeHtml } from '@/utils/sanitize';
@@ -88,7 +88,7 @@ async function initSettingsWindow(): Promise<void> {
   if (!llmMount || !apiMount) return;
 
   // Mount world-monitor tab immediately — it doesn't depend on secrets
-  const wmTab = new world-monitorTab();
+  const wmTab = new WorldMonitorTab();
   if (wmMount) {
     wmMount.innerHTML = '';
     wmMount.appendChild(wmTab.getElement());

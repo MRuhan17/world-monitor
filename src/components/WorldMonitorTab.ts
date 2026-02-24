@@ -2,10 +2,10 @@ import { getSecretState, setSecretValue, type RuntimeSecretKey } from '@/service
 import { isDesktopRuntime, getRemoteApiBaseUrl } from '@/services/runtime';
 import { t } from '@/services/i18n';
 
-const WM_KEY: RuntimeSecretKey = 'world-monitor_API_KEY';
+const WM_KEY: RuntimeSecretKey = 'WORLDMONITOR_API_KEY';
 const REG_STORAGE_KEY = 'wm-waitlist-registered';
 
-export class world-monitorTab {
+export class WorldMonitorTab {
   private el: HTMLElement;
   private keyInput!: HTMLInputElement;
   private emailInput!: HTMLInputElement;

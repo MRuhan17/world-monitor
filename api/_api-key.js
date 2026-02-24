@@ -15,13 +15,13 @@ export function validateApiKey(req) {
 
   if (isDesktopOrigin(origin)) {
     if (!key) return { valid: false, required: true, error: 'API key required for desktop access' };
-    const validKeys = (process.env.world-monitor_VALID_KEYS || '').split(',').filter(Boolean);
+    const validKeys = (process.env.WORLDMONITOR_VALID_KEYS || '').split(',').filter(Boolean);
     if (!validKeys.includes(key)) return { valid: false, required: true, error: 'Invalid API key' };
     return { valid: true, required: true };
   }
 
   if (key) {
-    const validKeys = (process.env.world-monitor_VALID_KEYS || '').split(',').filter(Boolean);
+    const validKeys = (process.env.WORLDMONITOR_VALID_KEYS || '').split(',').filter(Boolean);
     if (!validKeys.includes(key)) return { valid: false, required: true, error: 'Invalid API key' };
     return { valid: true, required: true };
   }

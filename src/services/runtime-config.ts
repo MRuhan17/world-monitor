@@ -22,7 +22,7 @@ export type RuntimeSecretKey =
   | 'UC_DP_KEY'
   | 'OLLAMA_API_URL'
   | 'OLLAMA_MODEL'
-  | 'world-monitor_API_KEY';
+  | 'WORLDMONITOR_API_KEY';
 
 export type RuntimeFeatureId =
   | 'aiGroq'
@@ -241,7 +241,7 @@ export function validateSecret(key: RuntimeSecretKey, value: string): { valid: b
     }
   }
 
-  if (key === 'world-monitor_API_KEY') {
+  if (key === 'WORLDMONITOR_API_KEY') {
     if (trimmed.length < 16) return { valid: false, hint: 'API key must be at least 16 characters' };
     return { valid: true };
   }
