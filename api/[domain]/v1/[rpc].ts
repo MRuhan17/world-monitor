@@ -5,7 +5,7 @@
  * CORS headers are applied to every response (200, 204, 403, 404).
  */
 
-export const config = { runtime: 'edge' };
+export const config = { runtime: 'nodejs' };
 
 import { createRouter } from '../../../server/router';
 import { getCorsHeaders, isDisallowedOrigin } from '../../../server/cors';
