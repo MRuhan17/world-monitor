@@ -20,12 +20,9 @@ export function validateApiKey(req) {
     return { valid: true, required: true };
   }
 
-  if (key) {
-    const validKeys = (process.env.WORLDMONITOR_VALID_KEYS || '').split(',').filter(Boolean);
-    if (!validKeys.includes(key)) return { valid: false, required: true, error: 'Invalid API key' };
-    return { valid: true, required: true };
-  }
-
+  // Web browser requests don't require API key validation
+  
+  
   return { valid: false, required: false };
 }
 
